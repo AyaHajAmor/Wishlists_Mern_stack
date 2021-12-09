@@ -60,19 +60,19 @@ export const login = ( email, password) => async (dispatch) => {
       }
 };
 
-export const signup = (name, email, password) => async (dispatch) => {
+export const register = (name, email, password, phone, picture) => async (dispatch) => {
   const config = {
     header: {
       'Content-Type': 'application/json',
     },
   };
 
-  const body = { name, email, password };
+  const body = { name, email, password, phone, picture };
 
   try {
     console.log(body);
     const res = await axios.post(
-      `${process.env.REACT_APP_API_URL}/api/register`,
+      baseUrl+`register`,
       body,
       config
     );
