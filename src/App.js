@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React
+, { useEffect } 
+from 'react';
+import { BrowserRouter as Router, Route, Switch  } from "react-router-dom";
+import Product from "./components/product.component";
+import Welcome from "./components/welcome.component";
+import { Provider } from "react-redux";
+import store from "./store";
+import Layout from "./Layout";
+import { check_authenticated } from "./actions/actions";
+import AllRoutes from './routes/allRoutes';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    store.dispatch(check_authenticated());
+    
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+    <Router >
+      <Layout>
+          <Switch >
+            <Route exact path="/welcome"   > <Welcome /></Route>
+            <Route exact path="/product"   > <Product /></Route>
+            <Route exact path="/login" ><Login /></Route>
+            <Route exact path="/register"  ><Register /></Route>
+            <Route component={AllRoutes} />
+          </Switch>
+        </Layout>
+    </Router>
+    </Provider>
   );
-}
+};
 
 export default App;
