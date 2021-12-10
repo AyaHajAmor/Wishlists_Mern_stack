@@ -11,12 +11,16 @@ const NavBar = ({ isAuthenticated, logout }) => {
   const authProtectedRoutes = (
     <Fragment>
       <li>
-        <Link to="/login" onClick={logout}>
-          Logout
-        </Link>
+        <Nav.Link as={Link} to="/wishlist" >Wishlist</Nav.Link>
+      </li>
+      <li>
+        <Nav.Link as={Link} to="/product" >Product</Nav.Link>
+      </li>
+      <li>
+        <Nav.Link as={Link} to="/login" onClick={logout} >Logout</Nav.Link>
       </li>
     </Fragment>
-  );
+  )
 
   const publicRoutes = (
     <Fragment>

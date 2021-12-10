@@ -1,42 +1,45 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const uniqueValidator = require('mongoose-unique-validator');
 
-let userModel= new Schema(
+let productModel= new Schema(
     {
-        picture: {
+        statut: {
             type: String,
             default: null
         },
-        phone: {
+        description: {
             type: String,
             required: true,
         },
-        name: {
+        currency: {
             type: String,
             required: true,
             maxlength: 128,
         },
-        email: {
-            type: String,
-            unique: true,
-            match: /^\S+@\S+\.\S+$/,
+        price: {
+            type: Number,
             required: true,
         },
-        password: {
+        name: {
             type: String,
             required: true
         },
-        
-        
+        id_user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+        },
+        id_wishlist: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Wishlist',
+        },
     },
     {
       timestamps: true
     },
     {
-        collection: 'users',
+        collection: 'products',
     }
 );
 
-userModel.plugin(uniqueValidator, { message: 'Email est deja utilisé!' });
-module.exports = mongoose.model('User', userModel);
+
+module.exports = mongoose.model('Product', productModel);

@@ -1,15 +1,11 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const router = express.Router();
 const userModel = require('../models/User');
-const { check, validationResult } = require('express-validator');
+const {  validationResult } = require('express-validator');
 
 
-/**
- * Returns jwt token if registration was successful
- *
- */
+//sign in
 exports.connect = async (req, res, next) => {
     let getUser;
     userModel.findOne({ email: req.body.email, })
@@ -51,7 +47,9 @@ exports.connect = async (req, res, next) => {
         });
 };
 
-exports.register = async (req, res, next) => {
+
+//sign up
+exports.register = async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(422).json(errors.array());
@@ -61,6 +59,7 @@ exports.register = async (req, res, next) => {
                 name: req.body.name,
                 email: req.body.email,
                 phone: req.body.phone,
+                picture: req.body.picture,
                 password: hash,
             });
             user

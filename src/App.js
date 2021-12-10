@@ -3,6 +3,7 @@ import React
 from 'react';
 import { BrowserRouter as Router, Route, Switch  } from "react-router-dom";
 import Product from "./components/product.component";
+import Wishlist from "./components/wishlist.component";
 import Welcome from "./components/welcome.component";
 import { Provider } from "react-redux";
 import store from "./store";
@@ -25,6 +26,7 @@ const App = () => {
           <Switch >
             <Route exact path="/welcome"   > <Welcome /></Route>
             <Route exact path="/product"   > <Product /></Route>
+            <Route exact path="/wishlist"   > <Wishlist /></Route>
             <Route exact path="/login" ><Login /></Route>
             <Route exact path="/register"  ><Register /></Route>
             <Route component={AllRoutes} />
