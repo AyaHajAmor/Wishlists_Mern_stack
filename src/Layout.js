@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import NavBar from './components/navbar.component';
 import Footer from './components/footer.component';
 import { connect } from 'react-redux';
-import { check_authenticated } from './actions/actions';
+import { check_authenticated } from './actions/auth_actions';
 
 const Layout = (props) => {
   useEffect(() => {

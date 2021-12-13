@@ -8,7 +8,7 @@ import Welcome from "./components/welcome.component";
 import { Provider } from "react-redux";
 import store from "./store";
 import Layout from "./Layout";
-import { check_authenticated } from "./actions/actions";
+import { check_authenticated } from "./actions/auth_actions";
 import AllRoutes from './routes/allRoutes';
 import Login from './pages/Login';
 import Register from './pages/Register';

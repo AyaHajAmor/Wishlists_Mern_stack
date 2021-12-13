@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { login } from "../actions/actions";
-import { Row, Form, Col, Button } from 'react-bootstrap';
+import { login } from "../actions/auth_actions";
+import { Row, Form, Col, Button, Container } from 'react-bootstrap';
 const Login = ({ login, isAuthenticated }) => {
   const [loginData, SetLoginData] = useState({
     name: "",
@@ -17,7 +17,6 @@ const Login = ({ login, isAuthenticated }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password);
     login(email, password);
   };
 
@@ -26,7 +25,7 @@ const Login = ({ login, isAuthenticated }) => {
   }
 
   return (
-    <div style={{ marginTop: '10%' }} >
+    <Container style={{ marginTop: '10%' }} >
       <Row>
         <Col className="row d-sm-flex text-center" md={{ span: 6, offset: 3 }} style={{ boxShadow: ' 10px 10px 20px grey  ' }}>
           <Form onSubmit={(e) => onSubmit(e)} >
@@ -44,7 +43,7 @@ const Login = ({ login, isAuthenticated }) => {
           </h6>
         </Col>
       </Row>
-    </div>
+    </Container>
   );
 };
 

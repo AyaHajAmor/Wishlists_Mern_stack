@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { register } from '../actions/actions';
-import { Row, Form, Col, Button } from 'react-bootstrap';
+import { register } from '../actions/auth_actions';
+import { Row, Form, Col, Button, Container } from 'react-bootstrap';
 
 const Signup = ({ register, check_authenticated }) => {
   const [accountCreated, setAccountCreated] = useState(false);
@@ -34,7 +34,7 @@ const Signup = ({ register, check_authenticated }) => {
   }
 
   return (
-<div style={{ marginTop: '10%' }} >
+<Container style={{ marginTop: '10%' }} >
       <Row>
         <Col className="row d-sm-flex text-center" md={{ span: 6, offset: 3 }} style={{ boxShadow: ' 10px 10px 20px grey  ' }}>
           <Form onSubmit={(e) => onSubmit(e)} >
@@ -61,7 +61,7 @@ const Signup = ({ register, check_authenticated }) => {
           </h6>
         </Col>
       </Row>
-    </div>
+    </Container>
   );
 };
 

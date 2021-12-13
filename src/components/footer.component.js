@@ -54,7 +54,7 @@ const Footer = () => {
     </section>
   </div>
   <div className="text-center text-dark p-3" style={{backgroundcolor: 'dark'}}>
-    © 2020 Copyright 
+    © 2021 Copyright 
     <a className="text-dark" href="https://ayahajamor.github.io/"> Aya Haj Amor</a>
     .Made with love <span> &#128155;</span> .
   </div>

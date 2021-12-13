@@ -6,7 +6,7 @@ const Product = () => {
     <div >
       <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
         <Row>
-          <Col sm={4}>
+          <Col sm={2}>
             <ListGroup>
               <ListGroup.Item action href="#link1">
                 Link 1
@@ -16,7 +16,7 @@ const Product = () => {
               </ListGroup.Item>
             </ListGroup>
           </Col>
-          <Col sm={8}>
+          <Col sm={10}>
             <Tab.Content>
               <Tab.Pane eventKey="#link1">
                 helloo

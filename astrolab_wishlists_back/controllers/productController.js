@@ -33,7 +33,6 @@ exports.addproduct = async (req, res) => {
 exports.allproducts = async (req, res) => {
     try {
         const user = req.params.id;
-        console.log(user)
         const data = await productModel.find({ id_user: user });
         res.status(200).json({
             data,

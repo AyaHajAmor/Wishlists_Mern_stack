@@ -1,0 +1,10 @@
+.menu:hover {
+    background: #F9A826;
+}
+.menu_droite {
+   
+    float: right;
+}
+.menu_gauche {
+    float: left;
+}

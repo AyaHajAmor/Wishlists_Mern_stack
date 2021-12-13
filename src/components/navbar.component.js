@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { logout } from '../actions/actions';
-import Login  from '../pages/Login';
-import Register  from '../pages/Register';
+import { logout } from '../actions/auth_actions';
 import { Navbar ,Container,Nav} from 'react-bootstrap';
+import './style.css';
 
 
 const NavBar = ({ isAuthenticated, logout }) => {
@@ -16,14 +15,14 @@ const NavBar = ({ isAuthenticated, logout }) => {
       <li>
         <Nav.Link as={Link} to="/product" >Product</Nav.Link>
       </li>
-      <li>
-        <Nav.Link as={Link} to="/login" onClick={logout} >Logout</Nav.Link>
+      <li className="ml-auto">
+        <Nav.Link as={Link} to="/login"  onClick={logout} className='menu_droite' >Logout</Nav.Link>
       </li>
     </Fragment>
   )
 
   const publicRoutes = (
-    <Fragment>
+    <Fragment className='menu_droite'>
       <li>
         <Nav.Link as={Link} to="/login" >Log In</Nav.Link>
       </li>

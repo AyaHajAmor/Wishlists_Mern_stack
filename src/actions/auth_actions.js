@@ -31,7 +31,6 @@ export const check_authenticated = () => async (dispatch) => {
   }
 };
 
-
 export const login = ( email, password) => async (dispatch) => {
     const config = {
       header: {
@@ -41,11 +40,9 @@ export const login = ( email, password) => async (dispatch) => {
 
     const body = { email, password };
       try {
-        console.log(baseUrl);
         const res = await axios.post(
           baseUrl+`connect`,
-          body
-          ,
+          body,
           config
         );
         dispatch({
@@ -70,7 +67,6 @@ export const register = (name, email, password, phone, picture) => async (dispat
   const body = { name, email, password, phone, picture };
 
   try {
-    console.log(body);
     const res = await axios.post(
       baseUrl+`register`,
       body,
