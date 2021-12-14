@@ -43,7 +43,8 @@ export default function auth(state = initialState, action) {
     case lOGOUT_SUCESS:
     case AUTHENTICATION_FAILED:
       localStorage.removeItem("access");
-      localStorage.removeItem("user");
+      localStorage.removeItem("name_user");
+      localStorage.removeItem("id_user");
 
       return {
         ...state,

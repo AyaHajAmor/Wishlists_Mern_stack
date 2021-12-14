@@ -15,7 +15,8 @@ exports.addproduct = async (req, res) => {
             id_wishlist: body.id_wishlist,
             id_user: body.id_user,
             statut: body.statut,
-         });
+            photo: body.photo,
+        });
         const savedProduct = await product.save()
         const findedWishlist = await wishlistModel.findOne({ _id: body.id_wishlist });
         findedWishlist.products.push(savedProduct._id);
@@ -38,10 +39,8 @@ exports.allproducts = async (req, res) => {
             data,
         });
     } catch (error) {
-        console.log(error)
         res.status(500).json({
             error: error,
         });
-
     }
 }

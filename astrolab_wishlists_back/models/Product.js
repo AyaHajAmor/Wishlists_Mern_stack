@@ -7,6 +7,10 @@ let productModel= new Schema(
             type: String,
             default: null
         },
+        photo: {
+            type: String,
+            default: null
+        },
         description: {
             type: String,
             required: true,

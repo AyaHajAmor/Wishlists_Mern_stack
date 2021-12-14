@@ -26,7 +26,7 @@ const Signup = ({ register, check_authenticated }) => {
   };
 
   if (check_authenticated) {
-    return <Redirect to="/" />;
+    return <Redirect to="/wishlist" />;
   }
 
   if (accountCreated) {

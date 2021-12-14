@@ -1,7 +1,7 @@
 import React
-, { useEffect } 
-from 'react';
-import { BrowserRouter as Router, Route, Switch  } from "react-router-dom";
+, { useEffect }
+  from 'react';
+import { BrowserRouter as Router, Route, Switch , Redirect} from "react-router-dom";
 import Product from "./components/product.component";
 import Wishlist from "./components/wishlist.component";
 import Welcome from "./components/welcome.component";
@@ -17,13 +17,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
   useEffect(() => {
     store.dispatch(check_authenticated());
-    
+
   }, []);
   return (
     <Provider store={store}>
-    <Router >
-      <Layout>
+      <Router >
+        <Layout>
           <Switch >
+            <Route exact path="/">
+              <Redirect to="/welcome" />
+            </Route>
             <Route exact path="/welcome"   > <Welcome /></Route>
             <Route exact path="/product"   > <Product /></Route>
             <Route exact path="/wishlist"   > <Wishlist /></Route>
@@ -32,7 +35,7 @@ const App = () => {
             <Route component={AllRoutes} />
           </Switch>
         </Layout>
-    </Router>
+      </Router>
     </Provider>
   );
 };

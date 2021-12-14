@@ -1,4 +1,6 @@
 import axios from 'axios';
+import {Alert } from 'react-bootstrap';
+
 import {
   CONNECT_SUCESS,
   CONNECT_FAILED,
@@ -18,6 +20,11 @@ export const check_authenticated = () => async (dispatch) => {
           type: AUTHENTICATION_SUCESS,
           payload: tokenCheck,
         });
+        <Alert  variant={'success'}>
+          Success
+    <Alert.Link href="#">authentification successfuly</Alert.Link>
+    like.
+  </Alert>
       }
     } catch (e) {
       dispatch({
@@ -49,6 +56,11 @@ export const login = ( email, password) => async (dispatch) => {
           type: CONNECT_SUCESS,
           payload: res.data,
         });
+        <Alert  variant={'success'}>
+          Success
+    <Alert.Link href="#">authentification successfuly</Alert.Link>
+    like.
+  </Alert>
         console.log('user logged In!');
       } catch (err) {
         dispatch({

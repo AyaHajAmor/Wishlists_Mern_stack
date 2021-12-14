@@ -3,8 +3,8 @@
 }
 .menu_droite {
    
-    float: right;
+    float: right !important;
 }
 .menu_gauche {
-    float: left;
+    float: left !important;
 }

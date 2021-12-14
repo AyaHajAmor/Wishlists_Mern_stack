@@ -1,6 +1,6 @@
 import React from 'react';
 import image1 from '../images/image1.svg';
-import { Row ,Col, Container} from 'react-bootstrap';
+import { Row ,Col, Container, Image} from 'react-bootstrap';
 
 const Welcome = () => {
   return (
@@ -11,7 +11,7 @@ const Welcome = () => {
 
   </Col>  
     <Col sm={6}>
-        <img src={image1} style={{width:'100%'}}/>
+    <Image src={image1} style={{width:'100%'}} />
     </Col>
   </Row>
     </Container>

@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import PrivateRoute from "./PrivateRoutes";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import Product from "../components/product.component";
+import Wishlist from "../components/wishlist.component";
 // import Signup from "../../pages/Signup";
 // import Users from "../../pages/Users";
 // import Activated from "../../pages/Activated";
@@ -16,9 +16,7 @@ const AllRoutes = () => {
       <Switch>
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
-        {/* <Route exact path="/users" component={Users} />
-        <Route exact path="/activated" component={Activated} /> */}
-        <PrivateRoute exact path="/sample" component={Product} />
+        <PrivateRoute exact path="/wishlist" component={Wishlist} />
       </Switch>
     </div>
   );
